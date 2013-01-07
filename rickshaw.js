@@ -1600,7 +1600,8 @@ Rickshaw.Graph.HoverDetail = Rickshaw.Class.create({
 				break;
 			}
 
-			if (stackedData[0][i].x <= domainX && stackedData[0][i + 1].x > domainX) {
+			// force subtractions here to ensure numeric comparison is correct!!!
+			if (stackedData[0][i].x - domainX <= 0 && stackedData[0][i + 1].x - domainX > 0) {
 				dataIndex = i;
 				break;
 			}
